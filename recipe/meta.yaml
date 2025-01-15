@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/laserfields-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/laserfields-{{ version }}.tar.gz
   sha256: b3f30b6e5ca86176b94d5e594342502feccfc06ffef54bf4798b837096973bd5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - flit-core >=3.2,<4
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy >=1.15
     - scipy >=1.0
     - numba >=0.49
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Python library for describing time-dependent laserfields by Johannes Feist.

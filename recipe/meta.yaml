@@ -1,5 +1,5 @@
 {% set name = "laserfields" %}
-{% set version = "0.4.3" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/laserfields-{{ version }}.tar.gz
-  sha256: ec3ef4aa88928c9da0e52b58987c3e7dddba9b783ea178ba522b28e1aa766d0d
+  sha256: 72e7b718d9a3f837de0a624df192f5ef3aac5b8fca56dedcfc871442b526bec7
 
 build:
   noarch: python
